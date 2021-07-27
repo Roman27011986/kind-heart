@@ -1,4 +1,4 @@
-import styles from './AssistanceItem.module.css'
+import styles from './AssistanceItem.module.scss'
 
 export default function AssistanceItam(params) {
   return (
