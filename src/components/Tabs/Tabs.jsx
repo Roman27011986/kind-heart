@@ -7,8 +7,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
-import Form from '../Form'
+import styles from './Tabs.module.scss'
+import FormItem from '../FormItem'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -45,20 +45,29 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
-        width: 900,
-        marginLeft: 'auto',
-    marginRight:'auto',
+    
+    width: 870,
+     [theme.breakpoints.down('1200')]: {
+      width: 600,
+    },
+    [theme.breakpoints.down('768')]: {
+      width: 320,
+    },
   },
 
   app: {
+    backgroundColor:'white',
+    boxShadow:'none',
     marginLeft: 'auto',
     marginRight:'auto',
-    width:'400px'
+    width: 350,
   },
   tab: {
-    
-    borderRadius:'5px'
+   
+    borderRadius: '5px',
+    fontFamily: 'Geometria-Bold',
+    fontSize: '10px',
+    padding: 0,
   }
 }));
 
@@ -76,15 +85,15 @@ export default function FullWidthTabs() {
   };
 
   return (
-      <div className={classes.root}>
-          <h2 style={{textAlign:'center'}} >Заповнiть форму</h2>
-      <AppBar className={classes.app}  position="static" color="default">
+      <div  className={classes.root}>
+          <h2 className={styles.title} >Заповнiть форму</h2>
+      <AppBar  className={classes.app}  position="static" color="default">
         <Tabs
+         
           className={classes.tab} 
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
-          textColor="primary"
           variant="fullWidth"
           aria-label="full width tabs example"
         >
@@ -93,15 +102,16 @@ export default function FullWidthTabs() {
         </Tabs>
       </AppBar>
       <SwipeableViews
+         
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <Form/>
+          <FormItem/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Item Two
+         <FormItem/>
         </TabPanel>
       </SwipeableViews>
     </div>

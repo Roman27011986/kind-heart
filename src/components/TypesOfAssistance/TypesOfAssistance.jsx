@@ -3,9 +3,10 @@ import { makeStyles,useTheme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import PhoneIcon from '@material-ui/icons/Phone';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
+import AccountBalanceWalletOutlinedIcon from '@material-ui/icons/AccountBalanceWalletOutlined';
+import PanToolOutlinedIcon from '@material-ui/icons/PanToolOutlined';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+
 import SwipeableViews from 'react-swipeable-views';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
@@ -15,10 +16,9 @@ import AssistanceItam from '../AssistanceItem/AssistanceItem';
 
 const useStyles = makeStyles({
   root: {
-    flexGrow: 1,
-        maxWidth: 500,
-        marginRight: 'auto',
-    marginLeft:'auto',
+    boxShadow:'none',
+    width: '100%',
+     borderColor:'red',   
   },
 });
 
@@ -27,6 +27,7 @@ function TabPanel(props) {
 
   return (
     <div
+      
       role="tabpanel"
       hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
@@ -53,7 +54,7 @@ export default function IconTabs() {
   const theme = useTheme();
     const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (_, newValue) => {
     setValue(newValue);
     };
     const handleChangeIndex = (index) => {
@@ -70,19 +71,26 @@ export default function IconTabs() {
         textColor="primary"
         aria-label="icon tabs example"
       >
-        <Tab icon={<PhoneIcon />} aria-label="phone" />
-        <Tab icon={<FavoriteIcon />} aria-label="favorite" />
-        <Tab icon={<PersonPinIcon />} aria-label="person" />
+        <Tab icon={<AccountBalanceWalletOutlinedIcon />}  aria-label="фінансова допомога" />
+        <Tab icon={<FavoriteBorderOutlinedIcon />} aria-label="favorite" />
+        <Tab icon={<PanToolOutlinedIcon />} aria-label="person" />
+        <Tab icon={<PanToolOutlinedIcon />} aria-label="person" />
           </Tabs>
            <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        <TabPanel  value={value} index={0} dir={theme.direction}>
          <AssistanceItam/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
+          Item Two
+        </TabPanel>
+        <TabPanel value={value} index={2} dir={theme.direction}>
+          Item Two
+        </TabPanel>
+          <TabPanel value={value} index={3} dir={theme.direction}>
           Item Two
         </TabPanel>
       </SwipeableViews>

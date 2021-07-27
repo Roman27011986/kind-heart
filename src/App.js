@@ -1,11 +1,10 @@
-import Tabs from './components/Tabs';
-import TypesOfAssistance from './components/TypesOfAssistance';
+import Conntainer from './components/Container';
+import Form from './components/Form';
 function App() {
   return (
-    <div className="App">
-      <Tabs />
-      <TypesOfAssistance />
-    </div>
+    <Conntainer>
+      <Form />
+    </Conntainer>
   );
 }
 
