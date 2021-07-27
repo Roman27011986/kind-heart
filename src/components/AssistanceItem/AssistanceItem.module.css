@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+.card {
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('../../res/images/card1.png');
+}

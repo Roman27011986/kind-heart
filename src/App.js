@@ -1,9 +1,10 @@
-import Form from './components/Form';
-
+import Tabs from './components/Tabs';
+import TypesOfAssistance from './components/TypesOfAssistance';
 function App() {
   return (
     <div className="App">
-      <Form />
+      <Tabs />
+      <TypesOfAssistance />
     </div>
   );
 }
