@@ -6,19 +6,19 @@ import Tab from '@material-ui/core/Tab';
 import AccountBalanceWalletOutlinedIcon from '@material-ui/icons/AccountBalanceWalletOutlined';
 import PanToolOutlinedIcon from '@material-ui/icons/PanToolOutlined';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 
 import SwipeableViews from 'react-swipeable-views';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
+import styles from './TypesOfAssistance.module.scss'
 import AssistanceItam from '../AssistanceItem/AssistanceItem';
 
 const useStyles = makeStyles({
   root: {
-    boxShadow:'none',
+    boxShadow: 'none',
     width: '100%',
-     borderColor:'red',   
   },
 });
 
@@ -27,7 +27,6 @@ function TabPanel(props) {
 
   return (
     <div
-      
       role="tabpanel"
       hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
@@ -52,7 +51,7 @@ TabPanel.propTypes = {
 export default function IconTabs() {
     const classes = useStyles();
   const theme = useTheme();
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState(1);
 
   const handleChange = (_, newValue) => {
     setValue(newValue);
@@ -62,6 +61,9 @@ export default function IconTabs() {
   };
 
   return (
+    <>
+      <h2 className={styles.title}>Види допомоги</h2>
+      <p className={styles.text}>Ви можете змінити вид допомоги</p>
     <Paper square className={classes.root}>
       <Tabs
         value={value}
@@ -71,10 +73,10 @@ export default function IconTabs() {
         textColor="primary"
         aria-label="icon tabs example"
       >
-        <Tab icon={<AccountBalanceWalletOutlinedIcon />}  aria-label="фінансова допомога" />
-        <Tab icon={<FavoriteBorderOutlinedIcon />} aria-label="favorite" />
-        <Tab icon={<PanToolOutlinedIcon />} aria-label="person" />
-        <Tab icon={<PanToolOutlinedIcon />} aria-label="person" />
+        <Tab icon={<PanToolOutlinedIcon />}   aria-label="фінансова допомога" />
+        <Tab icon={<AccountBalanceWalletOutlinedIcon/>}  aria-label="favorite" />
+        <Tab icon={<WorkOutlineIcon />} aria-label="person" />
+        <Tab icon={< FavoriteBorderOutlinedIcon />} aria-label="person" />
           </Tabs>
            <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -82,10 +84,10 @@ export default function IconTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel  value={value} index={0} dir={theme.direction}>
-         <AssistanceItam/>
+          Item Two
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Item Two
+            <AssistanceItam/>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           Item Two
@@ -94,6 +96,7 @@ export default function IconTabs() {
           Item Two
         </TabPanel>
       </SwipeableViews>
-    </Paper>
+      </Paper>
+      </>
   );
 }

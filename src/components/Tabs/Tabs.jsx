@@ -51,6 +51,8 @@ const useStyles = makeStyles((theme) => ({
       width: 600,
     },
     [theme.breakpoints.down('768')]: {
+      marginRight: 'auto',
+      marginLeft:'auto',
       width: 320,
     },
   },
@@ -89,7 +91,6 @@ export default function FullWidthTabs() {
           <h2 className={styles.title} >Заповнiть форму</h2>
       <AppBar  className={classes.app}  position="static" color="default">
         <Tabs
-         
           className={classes.tab} 
           value={value}
           onChange={handleChange}
@@ -102,7 +103,6 @@ export default function FullWidthTabs() {
         </Tabs>
       </AppBar>
       <SwipeableViews
-         
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
         onChangeIndex={handleChangeIndex}

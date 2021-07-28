@@ -1,50 +1,28 @@
-import { useState } from 'react';
-
 import InputBase from '@material-ui/core/InputBase';
 import { fade, withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
-import styles from './AssistanceItem.module.scss'
-
+import styles from './AssistanceItem.module.scss';
 const BootstrapInput = withStyles((theme) => ({
-  root: {
+   root: {
     'label + &': {
-      marginTop: theme.spacing(3),
-      
+       marginTop: theme.spacing(2),
     },
   },
   input: {
-    
-      borderRadius: 4,
-      // borderColor:'inherit',
-    // position: 'relative',
+    borderRadius: 4,
     backgroundColor: '#F0F8FF',
-    // border: '1px solid #ced4da',
     fontSize: 10,
-    height:'19px',
-    // padding: '10px 12px',
-
+    // height:'19px',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     '&:focus': {
-      
       boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-      // borderColor: theme.palette.primary.main,
+      
     },
   },
 }))(InputBase);
 
-
-
 export default function AssistanceItam() {
-  const [value,setValue] = useState('')
-
-  const handleChange = (e) => {
-    setValue(e.currentTarget.value)
-    if (value.length === 4) {
-      e.currentTarget.id = 1
-      e.currentTarget.focus()
-    }
-    console.dir(e); 
-  }
+  
   return (
     <div className={styles.container}>
       <ul className={styles.cardsContainer}>
@@ -54,20 +32,21 @@ export default function AssistanceItam() {
         <li className={styles.iconcard4}></li>
         <li className={styles.iconcard5}></li>
       </ul>
+       
       <div className={styles.cardForm}>
-        <p className={styles.text}>Номер карты</p>
+        <span className={styles.text}>Номер карты</span>
         <div className={styles.cardFormItem}>
           <BootstrapInput
-            style={{ width: '55px' }}
-            onChange={handleChange}
-            value={value}
-                label="Name"
-                name="name"
+              style={{ width: '55px' }}
+            name="name"
+            
                 variant="outlined"
                 type="text"
                 color='primary'
-                required
-          />
+            required
+            
+            />
+          
           <BootstrapInput
             style={{ width: '55px' }}
                 label="Name"

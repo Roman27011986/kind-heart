@@ -23,6 +23,12 @@ code {
     monospace;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 @font-face {
   font-family: 'Geometria-Bold';
   src: url('./res/fonts/Geometria/Geometria-Bold.eot'),

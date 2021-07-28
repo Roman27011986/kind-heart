@@ -1,9 +1,11 @@
 import { withStyles } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
-
+import styles from './FormBtn.module.scss'
 const ColorButton = withStyles((theme) => ({
-    root: {
+  root: {
+    fontFamily: 'Gilroy-Light',
+    fontSize:'10px',
     color: theme.palette.getContrastText(purple[500]),
     backgroundColor: purple[500],
     '&:hover': {
@@ -14,10 +16,10 @@ const ColorButton = withStyles((theme) => ({
 
 export default function CustomizedButtons() {
   return (
-      <ColorButton variant="contained" color="primary" >
-        Custom CSS
+    <div className={styles.btn}>
+      <ColorButton   variant="contained" color="primary" >
+        Допомогти
       </ColorButton>
-     
-   
+      </div>
   );
 }
