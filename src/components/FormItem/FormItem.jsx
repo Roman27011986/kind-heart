@@ -50,6 +50,7 @@ const CssTextField = withStyles((theme) => ({
 
 export default function FormItem() {
   return (
+  
     <div className={styles.inputContainer}>
       <div className={styles.inputItem} >
         <CssTextField  style={{ marginRight: 20 }} id="outlined-basic" label="Iм'я" variant="outlined" />
@@ -65,6 +66,7 @@ export default function FormItem() {
         <CssTextField style={{ width: '100%' }} id="outlined-basic" label="Адреса" variant="outlined" />
         <CssTextField id="outlined-basic" label="Поштовий індекс" variant="outlined" />
       </div>
-    </div>
+      </div>
+      
   );
 };

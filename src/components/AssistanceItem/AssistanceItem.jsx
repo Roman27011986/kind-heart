@@ -1,5 +1,5 @@
 import InputBase from '@material-ui/core/InputBase';
-import { fade, withStyles } from '@material-ui/core/styles';
+import { alpha, withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import styles from './AssistanceItem.module.scss';
 const BootstrapInput = withStyles((theme) => ({
@@ -15,7 +15,7 @@ const BootstrapInput = withStyles((theme) => ({
     // height:'19px',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     '&:focus': {
-      boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
       
     },
   },
@@ -38,13 +38,11 @@ export default function AssistanceItam() {
         <div className={styles.cardFormItem}>
           <BootstrapInput
               style={{ width: '55px' }}
-            name="name"
-            
+                name="name"
                 variant="outlined"
                 type="text"
                 color='primary'
             required
-            
             />
           
           <BootstrapInput
