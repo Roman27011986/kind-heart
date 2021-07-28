@@ -10,7 +10,6 @@ import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 
 import SwipeableViews from 'react-swipeable-views';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import styles from './TypesOfAssistance.module.scss'
 import AssistanceItam from '../AssistanceItem/AssistanceItem';
@@ -35,7 +34,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -84,16 +83,16 @@ export default function IconTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel  value={value} index={0} dir={theme.direction}>
-          Item Two
+          content...
         </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-            <AssistanceItam/>
+          <TabPanel value={value} index={1} dir={theme.direction}>
+              <AssistanceItam/>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Two
+          content...
         </TabPanel>
           <TabPanel value={value} index={3} dir={theme.direction}>
-          Item Two
+          content...
         </TabPanel>
       </SwipeableViews>
       </Paper>
