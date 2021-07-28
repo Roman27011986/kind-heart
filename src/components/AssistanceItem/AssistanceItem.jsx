@@ -3,11 +3,6 @@ import { alpha, withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import styles from './AssistanceItem.module.scss';
 const BootstrapInput = withStyles((theme) => ({
-   root: {
-    'label + &': {
-       marginTop: theme.spacing(2),
-    },
-  },
   input: {
     borderRadius: 4,
     backgroundColor: '#F0F8FF',
@@ -15,13 +10,11 @@ const BootstrapInput = withStyles((theme) => ({
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     '&:focus': {
       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-      
     },
   },
 }))(InputBase);
 
 export default function AssistanceItam() {
-  
   return (
     <div className={styles.container}>
       <ul className={styles.cardsContainer}>
@@ -31,7 +24,6 @@ export default function AssistanceItam() {
         <li className={styles.iconcard4}></li>
         <li className={styles.iconcard5}></li>
       </ul>
-       
       <div className={styles.cardForm}>
         <span className={styles.text}>Номер карты</span>
         <div className={styles.cardFormItem}>

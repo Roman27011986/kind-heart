@@ -11,7 +11,6 @@ import FormItem from '../FormItem'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -34,13 +33,6 @@ TabPanel.propTypes = {
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired,
 };
-
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
-  };
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,11 +72,9 @@ export default function FullWidthTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   const handleChangeIndex = (index) => {
     setValue(index);
   };
-
   return (
       <div  className={classes.root}>
           <h2 className={styles.title} >Заповнiть форму</h2>
@@ -97,8 +87,8 @@ export default function FullWidthTabs() {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab className={classes.tab} label="Фiз.особа" {...a11yProps(0)} />
-          <Tab className={classes.tab} label="Юр.особа" {...a11yProps(1)} />
+          <Tab className={classes.tab} label="Фiз.особа"  />
+          <Tab className={classes.tab} label="Юр.особа"  />
         </Tabs>
       </AppBar>
       <SwipeableViews

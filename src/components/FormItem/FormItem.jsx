@@ -1,10 +1,8 @@
 import {  withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import React from 'react';
 import styles from './FormItem.module.scss'
 
 const CssTextField = withStyles((theme) => ({
-  
   root: {
     backgroundColor: '#F0F8FF',
     marginBottom: '12px',
@@ -32,7 +30,6 @@ const CssTextField = withStyles((theme) => ({
         '& label.Mui-focused': {
       color: '#A9A9A9',
     },
-    
         '& .MuiOutlinedInput-root': {
             height: 38,
           '& fieldset': {

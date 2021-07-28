@@ -6,7 +6,6 @@ $icons: 'card1', 'card2', 'card3', 'card4', 'card5';
     display: block;
   }
 }
-
 .cardsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -30,7 +29,6 @@ $icons: 'card1', 'card2', 'card3', 'card4', 'card5';
     }
   }
 }
-
 .cardForm {
   display: flex;
   flex-direction: column;
@@ -44,19 +42,16 @@ $icons: 'card1', 'card2', 'card3', 'card4', 'card5';
   @media screen and (min-width: 320px) and (max-width: 767px) {
     width: 260px;
   }
-
   @media screen and (min-width: 320px) and (max-width: 1200px) {
     margin-left: auto;
     margin-right: auto;
   }
 }
-
 .cardFormItem {
   display: flex;
   justify-content: space-between;
   // align-items: flex-end;
 }
-
 .text {
   font-family: 'Gilroy-Light';
   font-size: 12px;
